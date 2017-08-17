@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ((TextView) findViewById(R.id.main_content_text)).setText("Nenhuma compra feita");
+//        ((TextView) findViewById(R.id.main_content_text)).setText("Nenhuma compra feita");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
