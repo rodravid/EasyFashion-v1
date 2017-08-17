@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
+import com.experience.totvs.easyfashion_v1.domain.user.Activities.UserScannerActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_launch_scanner) {
-            Intent intent = new Intent(this, ProductScannerActivity.class);
+            Intent intent = new Intent(this, UserScannerActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_see_follwing) {
             Intent intent = new Intent(this, DefaultFollowingListActivity.class);

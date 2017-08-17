@@ -1,12 +1,12 @@
-package com.experience.totvs.easyfashion_v1.domain.user;
+package com.experience.totvs.easyfashion_v1.domain.user.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import com.experience.totvs.easyfashion_v1.R;
+import com.experience.totvs.easyfashion_v1.domain.user.User;
+import com.experience.totvs.easyfashion_v1.domain.user.UserFactory;
 import com.google.zxing.Result;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
@@ -17,14 +17,10 @@ public class UserScannerActivity extends AppCompatActivity implements ZXingScann
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_scanner);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_user_scanner);
 
         factory = new UserFactory();
-    }
 
-    public void onClick(View v) {
         mScannerView = new ZXingScannerView(this);
         setContentView(mScannerView);
         mScannerView.setResultHandler(this);
@@ -39,22 +35,22 @@ public class UserScannerActivity extends AppCompatActivity implements ZXingScann
     @Override
     public void handleResult(Result result) {
         try {
-//"{ \"_id\": 206, \"age\": 27, \"name\": \"Mcmillan Yates\", \"gender\": \"male\", \"style\": \"Hippie\" }";
+//"{ "_id": 206, "age": 27, "name": "Mcmillan Yates", "gender": "male", "style": "Hippie" }";
+            mScannerView.stopCamera();
+
             User user = factory.makeFromJsonObject(result.getText());
 
             Log.v("handleResult", String.format("Read from QRCode - %s", user.getName()));
+            Log.v("handleResult", result.getText());
 
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            alertDialogBuilder.setTitle("Scan Result");
-            alertDialogBuilder.setMessage(user.getName());
-            alertDialogBuilder.create().show();
+            Intent intent = new Intent();
+            intent.putExtra("user", user);
+            setResult(RESULT_OK, intent);
+            finish();
 
         } catch(Exception e) {
             e.printStackTrace();
         }
-
-        mScannerView.stopCamera();
-        setContentView(R.layout.activity_product_scanner);
     }
 
     @Override

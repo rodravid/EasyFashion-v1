@@ -7,8 +7,10 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import com.experience.totvs.easyfashion_v1.domain.user.Activities.UserProfileActivity;
 import com.experience.totvs.easyfashion_v1.domain.user.User;
 
 import java.util.ArrayList;
@@ -35,6 +37,16 @@ public class FollowingListActivity extends AppCompatActivity {
         users.add(new User("Gabrielle", 21, "female", "Dark"));
         users.add(new User("Nathália", 22, "female", "Hippie"));
         users.add(new User("Rodrigo Snow", 19, "male", "Rock"));
+
+        usersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                User user = users.get(i);
+                Intent intent = new Intent(FollowingListActivity.this, UserProfileActivity.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
+            }
+        });
 
 //        findViewById(R.id.following_list_add_user).setOnClickListener(new View.OnClickListener() {
 //            @Override

@@ -10,7 +10,7 @@ public class UserFactory {
         try {
             JSONObject jsonParsed = new JSONObject(jsonObjectString);
             user
-                .setId(jsonParsed.getInt("__id"))
+                .setId(jsonParsed.getInt("_id"))
                 .setName(jsonParsed.getString("name"))
                 .setAge(jsonParsed.getInt("age"))
                 .setGender(jsonParsed.getString("gender"))
