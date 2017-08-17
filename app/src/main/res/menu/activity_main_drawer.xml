@@ -8,15 +8,20 @@
                 android:title="Home"/>
 
         <item
-                android:id="@+id/nav_camera"
+                android:id="@+id/nav_launch_scanner"
                 android:icon="@drawable/ic_menu_camera"
                 android:title="Scan Product"/>
+
         <item
-                android:id="@+id/nav_gallery"
+                android:id="@+id/nav_see_follwing"
+                android:icon="@drawable/ic_folder_shared_black"
+                android:title="Following"/>
+        <item
+                android:id="@+id/nav_show_catalog"
                 android:icon="@drawable/ic_book_black"
                 android:title="Catalog"/>
         <item
-                android:id="@+id/nav_manage"
+                android:id="@+id/nav_show_favorites"
                 android:icon="@drawable/ic_bookmark_black"
                 android:title="Favorites"/>
     </group>
@@ -24,11 +29,11 @@
     <item android:title="Communicate">
         <menu>
             <item
-                    android:id="@+id/nav_share"
+                    android:id="@+id/nav_launch_profile_activity"
                     android:icon="@drawable/ic_person_black"
                     android:title="Account"/>
             <item
-                    android:id="@+id/nav_send"
+                    android:id="@+id/nav_logout"
                     android:icon="@drawable/ic_logout_black"
                     android:title="Logout"/>
         </menu>

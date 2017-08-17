@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="android.permission.READ_PROFILE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
             android:allowBackup="true"
@@ -25,8 +26,19 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".LoginActivity"
-                android:label="@string/title_activity_login">
+                android:name=".ProductScannerActivity"
+                android:label="@string/title_activity_product_scanner"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".FollowingListActivity"
+                android:label="@string/title_activity_following_list">
+        </activity>
+        <activity android:name=".SearchUserActivity">
+        </activity>
+        <activity
+                android:name=".DefaultFollowingListActivity"
+                android:label="@string/title_activity_following_list">
         </activity>
     </application>
 

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.v4.widget.NestedScrollView-->
+<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+<!--tools:showIn="@layout/activity_following_list"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--tools:context="com.experience.totvs.easyfashion_v1.FollowingListActivity">-->
+
+<!--<ListView-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:id="@+id/following_list_view"></ListView>-->
+
+<!--</android.support.v4.widget.NestedScrollView>-->
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/OLD_following_list_view"></ListView>
+
+    <!--<Button-->
+            <!--android:id="@+id/list_add_contact"-->
+            <!--android:layout_width="70dp"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:text="+"-->
+            <!--android:elevation="10dp"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:textSize="40sp"-->
+            <!--android:textColor="#efefef"-->
+            <!--android:background="@drawable/primary_button_form"-->
+            <!--android:stateListAnimator="@null"/>-->
+
+</RelativeLayout>
+
